@@ -12,7 +12,7 @@ import Top from '../components/Top/Top';
 import Location from '@/components/Location/Location';
 
 const Home: React.FC = () => {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState<any>(null);
 
   const fetchData = async () => {
     try {
@@ -32,8 +32,8 @@ const Home: React.FC = () => {
   if (!data) {
     return <div>Loading...</div>;
   }
-  const propertyInformation = data.property.property_informations.find(each => each);
-  const localityInfo =data.property.locality.localityinfos.find(each => each);
+  const propertyInformation = data.property.property_informations.find((each:any) => each);
+  const localityInfo =data.property.locality.localityinfos.find((each:any) => each);
   const relatedproperties = data.related_properties;
   const imageSrc = data.property.property_image_informations 
   return (
@@ -76,7 +76,7 @@ const Home: React.FC = () => {
         <div className={styles.locationContainer}>
           <Location 
             address={propertyInformation.address || 'Default Address'} 
-            city={data.property.city.cityinfos?.find(each => each.city_name).city_name || 'Default City'} 
+            city={data.property.city.cityinfos?.find((each:any) => each.city_name).city_name || 'Default City'} 
           />
         </div>
         <div className={styles.propertyListContainer}>

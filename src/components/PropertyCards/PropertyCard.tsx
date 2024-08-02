@@ -13,12 +13,12 @@ interface PropertyCardProps {
   image: string;
   location: string;
   details: string;
-  price: number;
+  price: string;
   contact: string;
   info: {
-    bedroom:number;
-    bathroom: number;
-    area: number
+    bedroom:string;
+    bathroom: string;
+    area: string
   };
 }
 

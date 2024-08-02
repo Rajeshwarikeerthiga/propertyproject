@@ -1,28 +1,40 @@
-'use client'
-import React from 'react';
-import  './Top.css';
-import FmdGoodOutlinedIcon from '@mui/icons-material/FmdGoodOutlined';
-import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
-import AccessTimeOutlinedIcon from '@mui/icons-material/AccessTimeOutlined';
-import CottageOutlinedIcon from '@mui/icons-material/CottageOutlined';
-import HotelOutlinedIcon from '@mui/icons-material/HotelOutlined';
-import BathtubOutlinedIcon from '@mui/icons-material/BathtubOutlined';
-import SquareFootOutlinedIcon from '@mui/icons-material/SquareFootOutlined';
-import DateRangeIcon from '@mui/icons-material/DateRange';
+"use client";
+import React from "react";
+import "./Top.css";
+import FmdGoodOutlinedIcon from "@mui/icons-material/FmdGoodOutlined";
+import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
+import AccessTimeOutlinedIcon from "@mui/icons-material/AccessTimeOutlined";
+import CottageOutlinedIcon from "@mui/icons-material/CottageOutlined";
+import HotelOutlinedIcon from "@mui/icons-material/HotelOutlined";
+import BathtubOutlinedIcon from "@mui/icons-material/BathtubOutlined";
+import SquareFootOutlinedIcon from "@mui/icons-material/SquareFootOutlined";
+import DateRangeIcon from "@mui/icons-material/DateRange";
 
-import Buttonfamily from './Exsistence Button';
-import ContactButton from './Contact Button';
-import Save from './Save Button';
+import Buttonfamily from "./Exsistence Button";
+import ContactButton from "./Contact Button";
+import Save from "./Save Button";
 
-
-const Top = ({ title, localityName, listType, createdAt, bedRoom, bathRoom, feet, year, price, priceSqft }) => {
+const Top = ({
+  title,
+  localityName,
+  listType,
+  createdAt,
+  bedRoom,
+  bathRoom,
+  feet,
+  year,
+  price,
+  priceSqft,
+}:any) => {
   return (
     <div className={"layoutContainer"}>
       <div className={"leftDiv"}>
-        <p className={"breadcrumb"}>Home/NewDelhi/South West Delhi/Uttam Nagar/Preeti smart Homes</p>
+        <p className={"breadcrumb"}>
+          Home/NewDelhi/South West Delhi/Uttam Nagar/Preeti smart Homes
+        </p>
         <div className={"titleContainer"}>
           <h2 className={"title"}>{title}</h2>
-          <Save className={"saveButton"} />
+          <Save  />
         </div>
         <div>
           <p className={"info"}>
@@ -54,8 +66,8 @@ const Top = ({ title, localityName, listType, createdAt, bedRoom, bathRoom, feet
         </span>
         <p className={"price2"}>AED {priceSqft} Sq.ft</p>
         <span className={"imageRow"}>
-          <Buttonfamily className={"button1"} />
-          <ContactButton className={"button2"} />
+          <Buttonfamily  />
+          <ContactButton  />
         </span>
       </div>
     </div>
