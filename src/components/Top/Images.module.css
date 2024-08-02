@@ -1,0 +1,98 @@
+
+
+.container {
+
+ width:100%;
+ margin-top: 20px;
+}
+
+.seeAllWrapper {
+  margin-bottom: 16px; 
+}
+
+.seeAllImage {
+  width: 100%;
+}
+
+.gridImage {
+  margin: 0; 
+  display: block; 
+  width: 100%; 
+}
+
+.blurImageContainer {
+  position: relative;
+  overflow: hidden; 
+  height: 100%; 
+}
+
+.blurImage {
+  width: 100%;
+  height: auto; 
+  filter: blur(8px); 
+  display: block;
+  max-height: 130px; 
+}
+
+.seeAllOverlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 16px; 
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  pointer-events: none;
+}
+
+
+
+
+  
+.imageRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.Primary, .Primary1 {
+  object-fit: contain; 
+}
+
+.rightDiv h4 {
+  margin: 0;
+}
+
+.rightDiv p {
+  margin: 0;
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .seeAllWrapper {
+    margin-bottom: 16px; 
+  }
+
+  .seeAllImage {
+    width: 100% ;
+    height: auto ;
+  }
+
+  .gridImage {
+    width: 100% ;
+    height: auto ;
+  }
+
+  .blurImageContainer {
+    width: 100%;
+  }
+
+  .imageRow {
+    flex-direction: column;
+    width: 100%;
+  }
+}

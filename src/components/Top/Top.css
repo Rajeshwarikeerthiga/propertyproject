@@ -1,0 +1,151 @@
+.layoutContainer {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.leftDiv {
+  flex: 1;
+  padding: 10px;
+}
+
+.rightDiv {
+  flex-shrink: 0;
+  padding: 10px;
+  margin-top: 15px;
+
+}
+
+.text {
+  display: flex;
+  align-items: center;
+  gap: 10px; 
+  margin: 0 auto;
+}
+
+.breadcrumb {
+  font-size: 16px;
+  color: #797C88;
+}
+
+.titleContainer {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+.title {
+  font-size: 32px;
+  color: #1A222B;
+  margin: 0;
+}
+
+.info {
+  font-size: 16px;
+  color: #1A222B;
+  display: flex;
+  gap: 10px; 
+
+  line-height: 20px;
+}
+
+.Price {
+  font-size: 28px;
+}
+
+.priceNegotiable {
+  color: red;
+  font-size: 16px;
+}
+
+.imageRow {
+  display: flex;
+margin-left: 100px;
+  gap: 10px;
+}
+
+.icons {
+  color: #797C88;
+  font-size: 18px;
+  margin-right: 5px;
+}
+
+.price2 {
+  font-size: 16px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.item {
+  display: flex;
+
+}
+
+
+
+@media only screen and (max-width: 600px) {
+  .layoutContainer {
+    width: 100%;
+  }
+  .leftDiv, .rightDiv {
+    width: 100%;
+    padding: 0 10px;
+    text-align: left;
+   align-items: start;
+   display: flex;
+   flex-wrap: wrap;
+   flex-direction: column;
+  }
+
+ 
+
+  .text {
+ 
+display: flex;
+flex-wrap: wrap;
+white-space: nowrap;
+  }
+
+
+
+  .info {
+    font-size: 14px;
+    flex-wrap: wrap ;
+ 
+  }
+
+  .Price {
+    font-size: 24px;
+    margin: 0;
+  }
+
+  .priceNegotiable {
+    font-size: 14px;
+  }
+
+  .imageRow {
+    flex-direction: column;
+    width:100%;
+margin:0;
+  }
+
+.titleContainer{
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+ 
+}
+.titleContainer .MuiBox-root {
+  width: 100%;
+}
+
+
+ .saveButton{
+  width:100%;
+margin:0;
+
+ }
+}
+
+

@@ -1,0 +1,69 @@
+.layout {
+
+  padding: 20px;
+  display: flex;    
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap:10px;
+  padding-bottom: 30px;
+  } 
+
+  
+  .container {
+  
+
+       display: flex;
+        justify-content: space-between;
+       
+     
+  }
+  
+  .head2 {
+    font-size: 24px;
+    font-weight: 700;
+    
+    text-align: left;
+  }
+  .subheading {
+    flex: 1;
+    margin-right: 20px;
+    text-align: left;
+
+    color: #797C88;
+  }
+  
+  .definition {
+    flex: 2;
+    text-align: left;
+    color: #1A222B;
+
+  }
+  .subheading,.definition{
+  
+    font-size: 18px;
+    font-weight: 400;
+    
+    text-align: left;
+    
+      }
+      .bold {
+        font-weight: bold;
+      
+    
+    font-weight: 600;
+    color: #1A222B;
+    
+    
+      }
+      @media only screen and (max-width: 600px) {
+     
+  .container {
+  
+
+    display: flex;
+flex-direction: column;
+line-height: 24px;
+gap:10px;
+  
+}
+     }
