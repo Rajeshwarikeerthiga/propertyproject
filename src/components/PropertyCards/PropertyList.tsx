@@ -10,16 +10,19 @@ interface RelatedProperty {
   title: string;
   description: string;
   address: string;
-  price: number;
-  bedroom: number;
-  bathroom: number;
-  area: number;
+  price: string;
+  bedroom: string;
+  bathroom: string;
+  area: string;
+  price_per_sq_ft: string;
   image: string;
+  property_informations?: { title: string; description: string; address: string }[];
+  property_image_informations?: { image_path: string }[];
+  id: string;
 }
 
-const PropertyList: React.FC<{ relatedproperties: RelatedProperty[] }> = ({
-  relatedproperties,
-}) => {
+const PropertyList: React.FC<{ relatedproperties: RelatedProperty[] }> = ({ relatedproperties }) => {
+
   return (
     <div className={styles.container}>
       <div className={styles.header}>
@@ -30,23 +33,17 @@ const PropertyList: React.FC<{ relatedproperties: RelatedProperty[] }> = ({
           <SeeAllPropertiesButton />
         </div>
       </div>
-
       <div className={styles.propertyList}>
-        {relatedproperties.map((property: any, index) => {
-          const propertyInfo = property.property_informations?.find(
-            (each: any) => each
-          );
-          const imageSrc =
-            property.property_image_informations?.find(
-              (each: any) => each.image_path
-            )?.image_path || "Default City";
+        {relatedproperties.map((property, index) => {
+          const propertyInfo = property.property_informations?.[0];
+          const imageSrc = property.property_image_informations?.[0]?.image_path || "Default City";
           return (
             <PropertyCard
               key={index}
               image={imageSrc}
-              title={propertyInfo?.title}
-              description={propertyInfo?.description}
-              location={propertyInfo?.address}
+              title={propertyInfo?.title || property.title}
+              description={propertyInfo?.description || property.description}
+              location={propertyInfo?.address || property.address}
               details="2 BHK Apartment"
               price={`AED ${property.price}`}
               contact="Contact Owner"
@@ -55,6 +52,7 @@ const PropertyList: React.FC<{ relatedproperties: RelatedProperty[] }> = ({
                 bathroom: `${property.bathroom} Bath`,
                 area: `${property.price_per_sq_ft} Sqft`,
               }}
+              slug={property.id} 
             />
           );
         })}
@@ -62,5 +60,4 @@ const PropertyList: React.FC<{ relatedproperties: RelatedProperty[] }> = ({
     </div>
   );
 };
-
 export default PropertyList;

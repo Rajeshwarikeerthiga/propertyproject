@@ -1,4 +1,4 @@
-// components/Footer.tsx
+
 import Link from 'next/link';
 import styles from './footer.module.css';
 import Image from 'next/image';
@@ -9,8 +9,7 @@ const Footer = () => {
     <footer className={styles.footer}>
       <div className={styles.footerContainer}>
       <div className={styles.section}>
-       
-            <div>
+      <div>
        <h4><ColoredHeader/></h4>
           <br/>
            <p>Lorel impsum is a dummy text for printing and typesetting industry</p></div>

@@ -1,10 +1,9 @@
-/* components/PropertyList.module.css */
-/* components/PropertyList.module.css */
+
 .container {
     width: 100%;
-    margin-left: 20px;  /* Adjust these values as needed */
+    margin-left: 20px;  
     margin-right: 20px;
-  
+
   }
   
   .header {
@@ -15,13 +14,20 @@
   }
   
   .heading {
-    font-family: 'Montserrat', sans-serif;
+
     font-size: 20px;
     font-weight: 700;
     line-height: 39.01px;
     text-align: left;
   }
-  
+  .heading1{
+
+    text-align: left;
+   margin: 0;
+   padding-left: 80px;
+ padding: 40px;
+    max-width: 1200px;
+  }
   .seeAllWrapper {
     display: flex;
     align-items: center;
@@ -36,8 +42,10 @@ object-fit: contain;
   
   .propertyList {
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
-    gap: 0px;
+    gap: 50px;
+   padding: 20px; 
+  margin: 0 auto;
+  max-width: 1200px; 
   }
   

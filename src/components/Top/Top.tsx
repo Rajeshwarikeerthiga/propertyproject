@@ -9,12 +9,24 @@ import HotelOutlinedIcon from "@mui/icons-material/HotelOutlined";
 import BathtubOutlinedIcon from "@mui/icons-material/BathtubOutlined";
 import SquareFootOutlinedIcon from "@mui/icons-material/SquareFootOutlined";
 import DateRangeIcon from "@mui/icons-material/DateRange";
-
 import Buttonfamily from "./Exsistence Button";
 import ContactButton from "./Contact Button";
 import Save from "./Save Button";
+interface  TopProps{
+  title: string;
+  localityName: string;
+  listType: string;
+  createdAt: string;
+  bedRoom:  string;
+  bathRoom:  string;
+  feet: string;
+  year: string;
+  price: string;
+  priceSqft: string;
 
-const Top = ({
+}
+
+const Top: React.FC<TopProps> = ({
   title,
   localityName,
   listType,
@@ -25,7 +37,7 @@ const Top = ({
   year,
   price,
   priceSqft,
-}:any) => {
+}) => {
   return (
     <div className={"layoutContainer"}>
       <div className={"leftDiv"}>

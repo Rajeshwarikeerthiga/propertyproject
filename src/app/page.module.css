@@ -5,13 +5,16 @@
   align-items: center;
   padding-left: 20px;
   padding-right: 20px;
- max-width: 1200px;
+  padding: 20px; 
+  margin: 0 auto; 
+  max-width: 1200px;
   background-color: #FFFFFF;
   justify-content: center;
-  margin: 0 auto;
-gap:20px;
-}
 
+}
+.topContainer{
+  width:100%;
+}
 .moreContainer {
 width:100%;
 

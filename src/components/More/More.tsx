@@ -1,20 +1,30 @@
 import React from 'react';
 import styles from './More.module.css';
-
 interface MoreProps {
   propertyIdentifier: string;
-  price: number;
-  priceSqft: number;
-  builtArea: number;
+  price: string;
+  priceSqft: string;
+  builtArea: string;
   name: string;
   localityName: string;
   address: string;
   furnish: string;
-  totalFloor: number;
-  floorNo: number;
+  totalFloor: string;
+  floorNo: string;
 }
 
-const More: React.FC<MoreProps> = ({ propertyIdentifier, price, priceSqft, builtArea, name, localityName, address, furnish, totalFloor, floorNo }) => {
+const More: React.FC<MoreProps> = ({
+  propertyIdentifier,
+  price,
+  priceSqft,
+  builtArea,
+  name,
+  localityName,
+  address,
+  furnish,
+  totalFloor,
+  floorNo
+}) => {
   const definitions = [
     { subheading: "Price Breakup", definition: `AED ${price} | AED ${priceSqft} Stamp Duty, Registration Charges | AED ${builtArea} Sq.Unit Monthly` },
     { subheading: "Booking Amount", definition: `AED ${price}` },
@@ -27,13 +37,6 @@ const More: React.FC<MoreProps> = ({ propertyIdentifier, price, priceSqft, built
     { subheading: "Floor No", definition: floorNo },
     { subheading: "Property Facing", definition: "(North East)" },
   ];
-
-
-
-
-
-
-
   const formatDefinition = (definition: string) => {
     const parts = definition.split(/(\([^)]+\))/).filter(Boolean);
     return parts.map((part, index) =>

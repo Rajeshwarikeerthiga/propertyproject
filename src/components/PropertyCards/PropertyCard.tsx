@@ -20,11 +20,15 @@ interface PropertyCardProps {
     bathroom: string;
     area: string
   };
+  slug: string; 
 }
 
-const PropertyCard: React.FC<PropertyCardProps> = ({ title, description, image, location, details, price, contact, info }) => {
+const PropertyCard: React.FC<PropertyCardProps> = ({ title, description, image, location, details, price, contact, info ,  slug,}) => {
+  const handleClick = () => {
+    window.open(`/DetailProperty/${slug}`, '_blank'); 
+  };
   return (
-    <div className={styles.card}>
+    <div className={styles.card} onClick={handleClick}>
       <div className={styles.imageWrapper}>
         <Image 
           src={image} 

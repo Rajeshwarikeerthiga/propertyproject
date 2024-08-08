@@ -1,4 +1,4 @@
-// components/SeeAllPropertiesButton.tsx
+
 import React from 'react';
 import { Button } from '@mui/material';
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';

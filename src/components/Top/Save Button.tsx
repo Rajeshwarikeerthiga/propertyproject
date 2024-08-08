@@ -1,10 +1,10 @@
-// components/SeeAllPropertiesButton.tsx
+
 import React from 'react';
 import { Button } from '@mui/material';
 import { Box } from '@mui/material';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import { styled } from '@mui/material/styles';
-import './Top.css'
+import './Top.css';
 
 const CustomButton = styled(Button)(({ theme }) => ({
   border: '1px solid #797C88',

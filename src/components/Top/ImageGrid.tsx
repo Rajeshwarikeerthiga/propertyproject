@@ -1,5 +1,4 @@
-
-'use client'
+'use client';
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
@@ -16,6 +15,7 @@ interface ImageSrc {
 interface BasicGridProps {
   property_image_informations: ImageSrc[];
 }
+
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
   ...theme.typography.body2,
@@ -24,29 +24,24 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.secondary,
 }));
 
-
-
-
 const BasicGrid: React.FC<BasicGridProps> = ({ property_image_informations }) => {
-  const image = property_image_informations?.find(each => each.is_cover === 1)?.image_path || '';
-  const otherImages = property_image_informations?.filter(each => each.is_cover !== 1) || [];
+  const coverImage = property_image_informations.find(image => image.is_cover === 1)?.image_path || '';
+  const otherImages = property_image_informations.filter(image => image.is_cover !== 1);
+
   return (
-    
     <Box className={styles.container}>
       <Grid container spacing={2}>
         <Grid item sm={4} xs={12}>
-       
-        <div className={styles.seeAllWrapper}>
-  <Image 
-     src={image} 
-      alt="Property"
- 
-    width={350} 
-    height={280} 
-    className={styles.seeAllImage}
-  />
-</div>
-
+          <div className={styles.seeAllWrapper}>
+            <Image 
+              src={coverImage} 
+              alt="Property Cover Image" 
+              width={350} 
+              height={280} 
+              className={styles.seeAllImage} 
+              priority 
+            />
+          </div>
         </Grid>
         <Grid item sm={8} xs={12}>
           <Grid container spacing={2}>
@@ -57,11 +52,10 @@ const BasicGrid: React.FC<BasicGridProps> = ({ property_image_informations }) =>
                   alt={`Image ${index + 1}`} 
                   width={150} 
                   height={140} 
-                  className={styles.gridImage}
+                  className={styles.gridImage} 
                 />
               </Grid>
             ))}
-       
           </Grid>
         </Grid>
       </Grid>
