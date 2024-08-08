@@ -26,12 +26,14 @@ interface PropertyCardProps {
 const PropertyCard: React.FC<PropertyCardProps> = ({ title, description, image, location, details, price, contact, info ,  slug,}) => {
   const handleClick = () => {
     window.open(`/DetailProperty/${slug}`, '_blank'); 
+    window.open(`/propertyList`, '_blank'); 
   };
+ 
   return (
     <div className={styles.card} onClick={handleClick}>
       <div className={styles.imageWrapper}>
         <Image 
-          src={image} 
+          src={image.startsWith('http') ? image : `/images/${image}`}
           alt="Property Image" 
           width={500} 
           height={300} 

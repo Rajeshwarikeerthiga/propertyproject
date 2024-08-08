@@ -2,8 +2,8 @@
 
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import PropertyCard from '../../../components/PropertyCards/PropertyCard';
-import styles from '../../../components/PropertyCards/PropertyList.module.css';
+import PropertyCard from '../../components/PropertyCards/PropertyCard';
+import styles from '../../components/PropertyCards/PropertyList.module.css';
 import TablePagination from '@mui/material/TablePagination';
 
 interface PropertyInformation {
@@ -44,12 +44,12 @@ const PropertyLists: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   const [currentPage, setCurrentPage] = useState<number>(0);
   const [totalProperties, setTotalProperties] = useState<number>(0);
-  const [rowsPerPage, setRowsPerPage] = useState<number>(1);
+  const [rowsPerPage, setRowsPerPage] = useState<number>(5);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get<PropertyListResponse>(`https://api.respectpropertyowners.com/v1/property/filtered-property-list?direction=DESC&page=${currentPage + 1}&limit=${rowsPerPage}`);
+        const res = await axios.get<PropertyListResponse>(`https://dev-api.rpo.ae/v1/property/filtered-property-list?direction=DESC&page=${currentPage + 1}&limit=${rowsPerPage}`);
         if (res.data?.buyerFilteredProperty?.rows.length > 0) {
           setProperties(res.data.buyerFilteredProperty.rows);
           setTotalProperties(res.data.buyerFilteredProperty.count); 
@@ -128,7 +128,7 @@ const PropertyLists: React.FC = () => {
         onPageChange={handleChangePage}
         rowsPerPage={rowsPerPage}
         onRowsPerPageChange={handleChangeRowsPerPage}
-        rowsPerPageOptions={[1, 2, 3, 4, 5]}
+        rowsPerPageOptions={[5,10,15,20,25]}
       />
     </div>
   );

@@ -1,20 +1,21 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    images: {
-      remotePatterns: [
-        {
-          protocol: 'https',
-          hostname: 'assets.respectpropertyowners.com',
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "assets.respectpropertyowners.com",
+      },
+      {
+        protocol: "https",
+        hostname: "dev-images.rpo.ae",
+      },
+      {
+        protocol: "https",
+        hostname: "via.placeholder.com",
+      },
+    ],
+  },
+};
 
-        },
-        {
-          protocol: 'https',
-          hostname: 'via.placeholder.com',
-        
-        },
-      ],
-    },
-  };
-  
-  export default nextConfig;
-  
+export default nextConfig;
